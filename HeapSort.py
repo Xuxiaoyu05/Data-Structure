@@ -5,8 +5,8 @@
 class Solution:  
   def heapify(self, nums, root, heapsize):
     # 堆调整
-    left = 2 * root
-    right = 2* root + 1
+    left = 2 * root + 1  # 注意：列表从0开始，左节点下标为 2i+1,右节点下标为 2i+2
+    right = 2* root + 2
     larger = root
     if left < heapsize and nums[left] > nums[larger]:  # 注意：此处应该先判断left < heapsize，否则若left越界，nums[left]会报错
       larger = left
