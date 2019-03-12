@@ -14,16 +14,16 @@ class Solution:
 			while nums[j] >= pivot and j >= left:
 				j -= 1
 			while nums[i] <= pivot and i <= right :
-		    	i += 1
+		    		i += 1
 			
 			if i < j:
-				a[i], a[j] = a[j], a[i]
+				nums[i], nums[j] = nums[j], nums[i]
 		
-		nums[left] = a[i]
-		a[i] = pivot
+		nums[left] = nums[i]
+		nums[i] = pivot
 		
 		self.quickSort(nums, left, i-1)
-		self.quickSort(nums, i+1，right)
+		self.quickSort(nums, i+1, right)
 
 
 nums = [4, 5, 3, 8, 2, 9, 6, 7, 1]
