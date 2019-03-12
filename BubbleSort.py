@@ -16,6 +16,7 @@ class Solution:
 			length -= 1
 		
 		return nums
+	return
 	
 
 nums = [4,5,3,8,2,9,6,7,1]
