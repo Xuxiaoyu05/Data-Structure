@@ -1,0 +1,43 @@
+# 合并排序
+
+class Solution:
+  def mergeSort(self, nums):
+  
+    if len(nums) > 1:  # 注意1：len(nums) > 1才能进行接下来的计算
+      mid = len(nums) // 2
+
+      left = nums[:mid] 
+      right = nums[mid:]
+
+      self.mergeSort(left)
+      self.mergeSort(right)
+
+      i = 0; j = 0; k = 0
+
+      while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+          nums[k] = left[i]
+          i += 1
+        else:
+          nums[k] = right[j]
+          j += 1
+        k += 1
+
+      while i < len(left):   # 注意2：此处不能写while left，因为不是栈，所以left一直有值
+        nums[k] = left[i]
+        i += 1
+        k += 1
+
+      while j < len(right):
+        nums[k] = right[j]
+        j += 1
+        k += 1
+     
+    return nums
+  
+nums = [4, 5, 3, 8, 2, 9, 6, 7, 1]
+
+S = Solution()
+
+print(S.mergeSort(nums))     
+    
