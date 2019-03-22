@@ -8,14 +8,14 @@ class Solution:
     length = len(nums)
       
     for i in range(1, length):
-      itemToInsert = nums[i]
-      position = i
-      while position >= 1 and nums[position-1] > itemToInsert:  # 之前的都是排好序的，因此将前面的元素与itemToInsert比较
-      	nums[position] = nums[position-1]
+	itemToInsert = nums[i]
+      	position = i
+      	while position >= 1 and nums[position-1] > itemToInsert:  # 之前的都是排好序的，因此将前面的元素与itemToInsert比较
+      		nums[position] = nums[position-1]
 		position -= 1
-	  nums[position] = itemToInsert
+  	nums[position] = itemToInsert
 	
-      return nums
+    return nums
 
 
 
