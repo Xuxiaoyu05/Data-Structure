@@ -9,7 +9,7 @@ class Solution:
     
     while begin < length - 1:
       min_index = begin
-      for i in range(begin, n):
+      for i in range(begin, length):
         if nums[i] < nums[min_index]:
           min_index = i
           
